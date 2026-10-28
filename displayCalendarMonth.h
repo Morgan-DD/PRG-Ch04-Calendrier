@@ -1,0 +1,8 @@
+//
+// Created by Jib on 28.10.2026.
+//
+
+#ifndef PRG_CH04_CALENDRIER_DISPLAYCALENDARMONTH_H
+#define PRG_CH04_CALENDRIER_DISPLAYCALENDARMONTH_H
+int displayCalendarMonth(int nbDays, int dayOfTheWeek);
+#endif //PRG_CH04_CALENDRIER_DISPLAYCALENDARMONTH_H

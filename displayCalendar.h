@@ -1,0 +1,8 @@
+//
+// Created by Jib on 28.10.2026.
+//
+
+#ifndef PRG_CH04_CALENDRIER_DISPLAYCALENDAR_H
+#define PRG_CH04_CALENDRIER_DISPLAYCALENDAR_H
+void displayCalendar(int year);
+#endif //PRG_CH04_CALENDRIER_DISPLAYCALENDAR_H
