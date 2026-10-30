@@ -1,6 +1,5 @@
 #include <iostream>
 #include <ostream>
-#include <ctime>
 #include <iomanip>
 #include "displayCalendarMonth.h"
 //
@@ -13,18 +12,22 @@ void displayCalendar(int year) {
     int day = 1; // 1er du mois
     int month = 13; // code du mois de janvier utilisé dans l'algorythme de Zeller
     int dayOfTheWeek = (day + ((13*(month+1))/5) + (year-1)%100 + ((year-1)%100)/4 + (year/100)/4 + 2*(year/100))%7;
-
+    int nbDays;
     for (int i = 1; i <= 12; i++) {
         std::cout << months[i-1] << " " << year << std::endl;
-        if (i == 2) {
-            if (bissextile){ dayOfTheWeek=displayCalendarMonth(28, dayOfTheWeek); }
-            else { dayOfTheWeek=displayCalendarMonth(29, dayOfTheWeek); }
-
-        }else if (i%2) {
-            dayOfTheWeek=displayCalendarMonth(31, dayOfTheWeek);
-        }else {
-            dayOfTheWeek=displayCalendarMonth(30, dayOfTheWeek);
+        switch (i) {
+            case 2: nbDays=28+bissextile; break;
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: nbDays=31; break;
+                default: nbDays=30; break;
         }
+        dayOfTheWeek=displayCalendarMonth(nbDays, dayOfTheWeek);
+
     }
 
 }
