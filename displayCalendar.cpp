@@ -9,10 +9,10 @@
 void displayCalendar(int year) {
     const std::string months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     bool bissextile = year % 4 == 0 && year % 100 == 0 && year % 400 == 0;
-    int dayOfTheWeek = 1;
 
-    //std::cout << (2027 + (507)+1-1+6)%7-1;
-
+    int day = 1; // 1er du mois
+    int month = 13; // code du mois de janvier utilisé dans l'algorythme de Zeller
+    int dayOfTheWeek = (day + ((13*(month+1))/5) + (year-1)%100 + ((year-1)%100)/4 + (year/100)/4 + 2*(year/100))%7;
 
     for (int i = 1; i <= 12; i++) {
         std::cout << months[i-1] << " " << year << std::endl;
